@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OSIS Spensagal — Inovasi & Kontribusi</title>
+<meta name="description" content="Website Resmi OSIS Spensagal: Visi, Misi, Program Kerja, Struktur Organisasi, dan Aspirasi Siswa." />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  :root{
+    --color-primary: #3b82f6; /* Blue - Active/Primary */
+    --color-secondary: #f97316; /* Orange - Accent/Highlight */
+    --color-dark: #1f2937; /* Dark text/headers */
+    --color-light: #f3f4f6; /* Light background */
+    --color-muted: #6b7280; /* Muted text */
+    --color-card: #ffffff;
+    --radius-lg: 18px;
+    --radius-sm: 10px;
+    --shadow-base: 0 10px 30px rgba(0,0,0,0.05);
+    --shadow-lift: 0 16px 48px rgba(0,0,0,0.12);
+    --font-heading: 'Montserrat', 'Poppins', sans-serif;
+    --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;font-family:var(--font-body);
+    background:
+      radial-gradient(800px 300px at 5% 10%, rgba(59,130,246,0.06), transparent 8%),
+      radial-gradient(800px 300px at 95% 90%, rgba(249,115,22,0.05), transparent 8%),
+      var(--color-light);
+    color:var(--color-dark); -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:18px}
+
+  /* --- Header: Modern, slightly larger, fixed --- */
+  .topbar {
+    position:sticky; top:12px; z-index:120;
+    display:flex;align-items:center;justify-content:center;
+    padding:10px 20px;
+    border-radius:var(--radius-lg);
+    background:var(--color-card);
+    box-shadow: var(--shadow-lift);
+    color:var(--color-dark); backdrop-filter:blur(4px);
+    margin-bottom:20px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .topbar .title {
+    text-align:center; line-height:1.2;
+    display:flex;align-items:center;gap:10px;
+  }
+  .topbar .title i{font-size:26px;color:var(--color-primary)}
+  .topbar .title .main{
+    font-family:var(--font-heading);
+    font-weight:900;font-size:20px;letter-spacing:-0.5px;
+    background:linear-gradient(90deg,var(--color-primary),var(--color-secondary));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .topbar .title .sub{font-weight:600;font-size:13px;opacity:0.8;margin-top:2px;color:var(--color-muted)}
+
+  /* navigation under topbar */
+  nav.quick-nav{
+    display:flex;gap:10px;justify-content:center;margin:18px 0 24px;
+    flex-wrap:wrap;
+  }
+  nav.quick-nav a{
+    text-decoration:none;color:var(--color-muted);padding:10px 18px;border-radius:var(--radius-sm);font-weight:600;
+    background:var(--color-card);transition:all .2s;border:1px solid rgba(0,0,0,0.05);
+    box-shadow:var(--shadow-base);
+  }
+  nav.quick-nav a:hover{
+    color:var(--color-primary);
+    box-shadow:var(--shadow-lift);
+    transform:translateY(-2px);
+  }
+  nav.quick-nav a.active{
+    background:linear-gradient(90deg,var(--color-primary),var(--color-secondary));
+    color:white;
+    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+  }
+
+  /* main cards */
+  .card{background:var(--color-card);padding:25px;border-radius:var(--radius-lg);box-shadow:var(--shadow-base);margin-bottom:20px;border:1px solid rgba(0,0,0,0.05)}
+  h1,h2{font-family:var(--font-heading);margin:0;color:var(--color-dark)}
+  h1{font-size:32px;color:var(--color-primary);letter-spacing:-1px}
+  h2{font-size:26px;color:var(--color-primary)}
+  h3{color:var(--color-secondary);font-family:var(--font-heading);margin:0 0 10px}
+  .lead{color:var(--color-muted);margin-top:8px;font-size:16px}
+  .section-header{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px;
+  }
+
+  /* Beranda layout */
+  .beranda{display:grid;grid-template-columns:1fr 380px;gap:25px;align-items:start}
+  .boxes{display:grid;gap:18px}
+  .box{background:linear-gradient(180deg,var(--color-card),var(--color-light));padding:20px;border-radius:var(--radius-lg);box-shadow:0 8px 25px rgba(0,0,0,0.03)}
+  .box h3 i{margin-right:8px;color:var(--color-primary)}
+  ul.clean{padding-left:0;margin:0;list-style:none;color:var(--color-dark)}
+  ul.clean li{margin-bottom:10px;padding-left:24px;position:relative}
+  ul.clean li:before{
+    content:'\f058'; font-family:'Font Awesome 6 Free'; font-weight:900;
+    color:var(--color-secondary); position:absolute; left:0; top:0;
+  }
+
+  .proker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin-top:10px}
+  .proker{
+    padding:15px;border-radius:var(--radius-sm);color:white;font-weight:700;text-align:center;min-height:80px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transition:transform .2s;
+  }
+  .proker:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.1)}
+  .proker i{font-size:20px;margin-bottom:5px}
+
+  .p1{background:linear-gradient(135deg,#60a5fa,#3b82f6)} /* Blue */
+  .p2{background:linear-gradient(135deg,#fcd34d,#f59e0b)} /* Yellow */
+  .p3{background:linear-gradient(135deg,#34d399,#059669)} /* Green */
+  .p4{background:linear-gradient(135deg,#fca5a5,#ef4444)} /* Red */
+  .p5{background:linear-gradient(135deg,#a78bfa,#8b5cf6)} /* Purple */
+  .p6{background:linear-gradient(135deg,#f97316,#ea580c)} /* Orange */
+
+  /* right column small boxes */
+  .right-col{display:flex;flex-direction:column;gap:15px}
+  .small{padding:18px;border-radius:var(--radius-lg);background:var(--color-card);box-shadow:var(--shadow-base)}
+  .small strong{color:var(--color-primary)}
+  .small i{margin-right:6px;color:var(--color-secondary)}
+
+  /* Struktur */
+  .org-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin-top:20px}
+  .member{
+    background:linear-gradient(180deg,#fff,#f8f8f8);padding:18px;border-radius:var(--radius-lg);
+    text-align:center;box-shadow:0 10px 26px rgba(0,0,0,0.04);border-bottom:4px solid var(--color-primary);
+  }
+  .member .role{font-weight:800;color:var(--color-secondary);font-size:15px;text-transform:uppercase}
+  .member .name{margin-top:6px;color:var(--color-dark);font-size:16px;font-weight:700}
+  .member .role-detail{font-size:12px;color:var(--color-muted);margin-top:4px}
+
+  /* gallery */
+  .gallery-link{
+    text-decoration:none;
+    display:block;
+    padding:15px 25px;
+    background:linear-gradient(90deg,var(--color-primary),#4d95f8);
+    color:white;
+    font-weight:700;
+    text-align:center;
+    border-radius:var(--radius-lg);
+    box-shadow:0 8px 20px rgba(59,130,246,0.3);
+    transition:transform .2s, box-shadow .2s;
+    margin-top:15px;
+    font-size:18px;
+  }
+  .gallery-link:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(59,130,246,0.4);
+  }
+  .gallery-link i{margin-right:8px}
+
+
+  /* aspirasi */
+  .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start;margin-top:20px}
+  input[type=text],textarea{
+    width:100%;padding:12px;border-radius:var(--radius-sm);border:1px solid #e5e7eb;
+    font-family:inherit;background:var(--color-light);color:var(--color-dark);
+  }
+  label{display:block;margin-bottom:5px;font-weight:600;color:var(--color-dark)}
+  .field{margin-bottom:15px}
+  .btn{
+    padding:10px 20px;border-radius:var(--radius-sm);border:none;color:white;cursor:pointer;font-weight:700;
+    background:linear-gradient(90deg,var(--color-primary),var(--color-secondary));
+    transition:all .2s;box-shadow:0 8px 15px rgba(59,130,246,0.3);
+  }
+  .btn:hover{opacity:0.9;transform:translateY(-1px)}
+
+  /* footer */
+  footer{margin-top:30px;padding:20px;text-align:center;color:var(--color-muted);font-size:14px;border-top:1px dashed #e5e7eb}
+  footer i{color:var(--color-secondary)}
+
+  /* modal (removed, as we are using external link) */
+
+  /* responsiveness */
+  @media (max-width:1080px){
+    .beranda{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .right-col{flex-direction:row;flex-wrap:wrap}
+    .right-col > *{flex:1;min-width:260px}
+  }
+  @media (max-width:768px){
+    h1{font-size:28px}
+    h2{font-size:22px}
+    .topbar .title .main{font-size:18px}
+    nav.quick-nav{gap:8px}
+    nav.quick-nav a{padding:8px 12px;font-size:14px}
+    .right-col{flex-direction:column}
+  }
+  @media (max-width:520px){
+    .wrap{padding:10px}
+    .card{padding:18px}
+    h1{font-size:24px}
+  }
+
+  /* reveal */
+  .fade{opacity:0;transform:translateY(15px);transition:all .8s cubic-bezier(.1,1.2,.2,1)}
+  .show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar" role="banner" aria-label="Header OSIS Spensagal">
+      <div class="title">
+        <i class="fas fa-sitemap"></i>
+        <div>
+          <div class="main">OSIS Spensagal</div>
+          <div class="sub">Inovasi & Kontribusi</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="quick-nav" aria-label="Navigasi utama">
+      <a href="#beranda" class="active"><i class="fas fa-home"></i> Beranda</a>
+      <a href="#struktur"><i class="fas fa-users-cog"></i> Struktur</a>
+      <a href="#dokumentasi"><i class="fas fa-camera"></i> Dokumentasi</a>
+      <a href="#aspirasi"><i class="fas fa-paper-plane"></i> Aspirasi</a>
+    </nav>
+
+    <section id="beranda" class="card fade show" aria-labelledby="berandaTitle" style="margin-top:14px">
+      <div class="beranda">
+        <div>
+          <h1 id="berandaTitle">Selamat Datang Di Website Resmi OSIS Spensagal</h1>
+          <div class="lead">Wadah untuk berkreasi, berinovasi, dan memberikan kontribusi terbaik untuk sekolah kita.</div>
+
+          <div class="boxes" style="margin-top:20px">
+            <div class="box">
+              <h3><i class="fas fa-bullseye"></i> Visi OSIS</h3>
+              <p style="font-weight:700;color:var(--color-dark)">Membangun generasi pelajar yang Unggul dalam prestasi,berakhlakul karimah dan adaptif dalam perkembangan teknologi, demi terciptanya sekolah yang cerdas, kreatif, dan berdaya saing global.</p>
+            </div>
+
+            <div class="box">
+              <h3><i class="fas fa-lightbulb"></i> Misi Kami</h3>
+              <ul class="clean">
+                <li>Membangun cara belajar yang inovatif, kolaboratif, dan berorientasi agar mencapai prestasi akademik terbaik.</li>
+                <li>Menghadirkan kegiatan sosial yang membangun kepedulian serta menumbuhkan rasa kebersamaan.</li>
+                <li>Memperkuat karakter dan akhlak siswa melalui kegiatan sosial, keagamaan, dan pembinaan etika digital.</li>
+                <li>Menjadi teladan yang inspiratif, berwawasan luas, dan siap menghadapi tantangan zaman.</li>
+              </ul>
+            </div>
+
+            <div class="box">
+              <h3><i class="fas fa-cogs"></i> Program Kerja Unggulan</h3>
+              <div class="proker-grid">
+                <div class="proker p1"><i class="fas fa-running"></i> Classmeet Sport & Art</div>
+                <div class="proker p2"><i class="fas fa-flask"></i> Academi Fun Day</div>
+                <div class="proker p3"><i class="fas fa-project-diagram"></i> Project Based Month</div>
+                <div class="proker p4"><i class="fas fa-desktop"></i> OSIS Digital System</div>
+                <div class="proker p5"><i class="fas fa-palette"></i> Pentas Seni & Karya</div>
+                <div class="proker p6"><i class="fas fa-hand-holding-heart"></i> Bakti Sosial & SENGGOL</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="right-col">
+          <div class="small">
+            <strong><i class="fas fa-calendar-alt"></i> Kegiatan Mendatang</strong>
+            <div style="margin-top:10px;font-size:14px;color:var(--color-muted)">
+              <div style="margin-bottom:8px"><strong>Classmeet</strong> — Lomba antar kelas, pameran stan kreatif.</div>
+              <div style="margin-bottom:8px"><strong>Academi Fun Day</strong> — Workshop edukatif dan games sains.</div>
+              <div style="margin-bottom:8px"><strong>PBM</strong> — Pameran Proyek Siswa.</div>
+            </div>
+          </div>
+
+          <div class="small">
+            <strong><i class="fas fa-bullhorn"></i> Pengumuman Penting</strong>
+            <div id="announce" style="margin-top:8px;font-size:15px;font-weight:600;color:var(--color-dark)">📢 coming soon.</div>
+          </div>
+
+          <div class="small">
+            <strong><i class="fas fa-quote-right"></i> Kata Semangat</strong>
+            <div id="quote" style="margin-top:8px;font-weight:700;font-style:italic;color:var(--color-primary)">"Berkreasi untuk sekolah yang lebih bermakna."</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="struktur" class="card fade" style="margin-top:20px" aria-labelledby="strukturTitle">
+      <div class="section-header">
+        <h2 id="strukturTitle"><i class="fas fa-network-wired"></i> Struktur Organisasi Periode 2025/2026</h2>
+        <div class="lead">Identitas Inti Osis</div>
+      </div>
+
+      <div class="org-grid">
+        <div class="member" style="grid-column:1/-1;max-width:200px;margin:0 auto">
+          <div class="role">Ketua OSIS</div>
+          <div class="name">Adeeva A. Myesha</div>
+        </div>
+        <div class="member" style="grid-column:span 2 / auto; max-width:200px;margin:0 auto">
+          <div class="role">Wakil Ketua OSIS</div>
+          <div class="name">Arya Yudha A.</div>
+        </div>
+        
+        <div class="member">
+          <div class="role">Sekretaris I</div>
+          <div class="name">Aryo Dito W.</div>
+          <div class="role-detail">Administrasi & Surat-Menyurat</div>
+        </div>
+        <div class="member">
+          <div class="role">Sekretaris II</div>
+          <div class="name">Nhere Hemisphere E.H</div>
+          <div class="role-detail">Dokumentasi & Kearsipan</div>
+        </div>
+
+        <div class="member">
+          <div class="role">Bendahara I</div>
+          <div class="name">Ilona Yiesha</div>
+          <div class="role-detail">Keuangan & Anggaran</div>
+        </div>
+        <div class="member">
+          <div class="role">Bendahara II</div>
+          <div class="name">Sekar Harumdani D.</div>
+          <div class="role-detail">Pembukuan & Laporan</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dokumentasi" class="card fade" style="margin-top:20px">
+      <div class="section-header">
+        <h2><i class="fas fa-image"></i> Galeri Kegiatan</h2>
+        <div class="lead">Lihat momen terbaik kami.</div>
+      </div>
+
+      <a href="https://drive.google.com/drive/folders/1fVcEsXn03L0ygnbWEZt4UYWSfWA_pD_j" target="_blank" class="gallery-link">
+        <i class="fas fa-external-link-alt"></i> Buka Galeri di Google Drive
+      </a>
+      <div class="card" style="margin-top:20px;border-left:5px solid var(--color-secondary);border-radius:var(--radius-lg)">
+        <h3><i class="fas fa-list-check"></i> Detail Program Kerja</h3>
+        <ul class="clean" style="margin-top:10px">
+          <li>Classmeet Sport & Art: Kompetisi olahraga dan seni antar kelas, meningkatkan solidaritas dan bakat.</li>
+          <li>Academi Fun Day: Workshop, demo sains, kompetisi IPTEK, dan games edukatif yang menyenangkan.</li>
+          <li>Project Based Month (PBM): Pameran proyek siswa (karya & penelitian) sebulan penuh untuk mendorong inovasi.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="aspirasi" class="card fade" style="margin-top:20px">
+      <div class="section-header">
+        <h2><i class="fas fa-comment-dots"></i> Kotak Aspirasi & Kontak</h2>
+        <div class="lead">Sampaikan ide, kritik, atau dukunganmu melalui formulir online.</div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card" style="padding:20px;border-left:5px solid var(--color-primary)">
+          <h3>Kirim Aspirasimu</h3>
+          <p class="lead" style="color:var(--color-dark);font-size:16px;">
+            Untuk memastikan aspirasi dan ide Anda tercatat dengan baik, silakan isi formulir resmi Google Form kami.
+          </p>
+
+          <a href="https://forms.gle/ykPEaHC5w1fZjCHH9" target="_blank" class="btn" style="display:inline-block;text-decoration:none;margin-top:15px">
+            <i class="fas fa-paper-plane"></i> Buka Formulir Aspirasi (Google Form)
+          </a>
+          <div id="aspNotif" style="margin-top:15px;font-weight:600;color:var(--color-secondary)">
+            <i class="fas fa-exclamation-triangle"></i> PENCET TAUTAN TERTERA UNTUK MEMBERI KRITIK,SARAN DAN ASPIRASI.
+          </div>
+        </div>
+        <aside class="card" aria-live="polite">
+          <h3><i class="fas fa-phone-alt"></i> Kontak OSIS</h3>
+          <p class="lead" style="margin-top:8px;color:var(--color-muted)">Hubungi pengurus untuk informasi dan kolaborasi</p>
+          <hr style="border:0;border-top:1px dashed #e5e7eb;margin:10px 0">
+          <p style="margin:10px 0">Ketua OSIS<br> Adeeva A. Myesha</p>
+          <p style="margin:10px 0">Email Resmi<br> <a href="mailto:osis@spensagal.sch.id" style="color:var(--color-secondary)">osis@spensagal.sch.id</a></p>
+          <div style="margin-top:15px">
+            <h4 style="margin:0 0 6px">Jam Layanan Aspirasi</h4>
+            <div class="lead" style="color:var(--color-muted);font-weight:600"><i class="fas fa-clock"></i> Senin–Sabtu • 08:00 - 20:00</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <i class="fas fa-laptop-code"></i> &copy; <span id="year"></span> OSIS Spensagal — Inovasi, Kontribusi, Prestasi.
+    </footer>
+  </div>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('.quick-nav a').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const id = this.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(!el) return;
+      window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 12, behavior:'smooth'});
+      document.querySelectorAll('.quick-nav a').forEach(x=>x.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // nav highlight on scroll
+  const navLinks = Array.from(document.querySelectorAll('nav.quick-nav a'));
+  const sections = Array.from(document.querySelectorAll('section'));
+  function updateNav(){
+    const top = window.scrollY + 100;
+    let cur = sections[0];
+    sections.forEach(s => { if(s.offsetTop <= top) cur = s; });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + cur.id);
+    });
+  }
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+
+  // reveal on scroll
+  const fades = Array.from(document.querySelectorAll('.fade'));
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(ent=>{ if(ent.isIntersecting) ent.target.classList.add('show'); });
+  }, {threshold: 0.12});
+  fades.forEach(f => obs.observe(f));
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // rotate quote
+  const quotes = ["Berkreasi untuk sekolah yang lebih bermakna.","Satu ide kecil, dampak besar.","Bersama OSIS, kita bisa lebih baik.","Inovasi hari ini, prestasi masa depan."];
+  const qEl = document.getElementById('quote');
+  let qIndex = 0;
+  setInterval(()=>{
+    qIndex = (qIndex + 1) % quotes.length;
+    qEl.textContent = quotes[qIndex];
+  }, 8000);
+  
+</script>
+</body>
+</html>
